@@ -1,6 +1,6 @@
-from aiogram import Bot, Dispatcher, types
+from aiogram import Bot, Dispatcher, F
 from asyncio import run
-from functions import some_answer
+from functions import some_answer,cancel_markup
 dp = Dispatcher()
 
 async def startup_answer(bot: Bot):
@@ -12,7 +12,7 @@ async def shutdown_answer(bot: Bot):
 async def start():
 
     dp.startup.register(startup_answer)
-
+    dp.message.register(cancel_markup,F.text.lower() == "cancel")
     dp.message.register(some_answer)
 
     dp.shutdown.register(shutdown_answer)

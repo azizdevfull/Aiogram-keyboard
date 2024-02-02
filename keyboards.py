@@ -1,4 +1,4 @@
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 
 some_buttons = ReplyKeyboardMarkup(
@@ -14,5 +14,8 @@ some_buttons = ReplyKeyboardMarkup(
             KeyboardButton(text="6-tugma")
         ],
     ],
-    resize_keyboard=True
+    resize_keyboard=True,
+    # is_persistent=True # bu tugmani yashirish qismini yoqotadi 
+    # one_time_keyboard=True # bu tugma bosilgach yopilib ochiladi
+    input_field_placeholder="Tugmalarni birini tanlang!"
 ) 
